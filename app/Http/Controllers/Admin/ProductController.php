@@ -69,7 +69,22 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        try {
+            // Find the product by ID
+            $product = $product;
+            // Return the product details as a JSON response
+            return response()->json([
+                'id' => $product->id,
+                'name' => $product->name,
+                'category' => $product->category->name,
+                'price' => $product->price,
+            ], 200);
+        } catch (\Exception $e) {
+            // Return an error response if the Product is not found
+            return response()->json([
+                'message' => 'Product not found.',
+            ], 404);
+        }
     }
 
     /**

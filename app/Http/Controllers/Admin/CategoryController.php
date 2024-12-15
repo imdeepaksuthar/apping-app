@@ -63,7 +63,23 @@ class CategoryController extends Controller
      */
     public function show(Category $Category)
     {
-        //
+        try {
+            // Find the category by ID
+            $category = $Category;
+            // Return the category details as a JSON response
+            return response()->json([
+                'id' => $category->id,
+                'name' => $category->name,
+                'count_product' => $category->products->count(),
+                'products' => $category->products,
+            ], 200);
+        } catch (\Exception $e) {
+            // Return an error response if the category is not found
+            return response()->json([
+                'message' => 'Category not found.',
+            ], 404);
+        }
+
     }
 
     /**
