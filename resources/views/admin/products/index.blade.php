@@ -13,31 +13,35 @@
             </div>
             <div class="card-body">
                 <div class="d-flex justify-content-end mb-3">
-                    <!-- Add Category Button -->
-                    <a href="{{ route('products.create') }}" class="btn btn-primary"><i
-                            class="fas fa-plus-circle me-1"></i>Add Product</a>
+                    <!-- Add Product Button -->
+                    <a href="{{ route('products.create') }}" class="btn btn-primary">
+                        <i class="fas fa-plus-circle me-1"></i> Add Product
+                    </a>
                 </div>
-                <table class="table table-bordered" id="products-data-table">
-                    <thead>
-                        <tr>
-                            <th width="10px">#</th>
-                            <th>Name</th>
-                            <th>Category Name</th>
-                            <th>Price</th>
-                            <th class="text-center">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- DataTable rows will be populated via AJAX -->
-                    </tbody>
-                </table>
+
+                <!-- Responsive Table Wrapper -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="products-data-table">
+                        <thead>
+                            <tr>
+                                <th width="10px">#</th>
+                                <th>Name</th>
+                                <th>Category Name</th>
+                                <th>Price</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- DataTable rows will be populated via AJAX -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- View Category Modal -->
-    <div class="modal fade" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="viewProductModal" tabindex="-1" aria-labelledby="viewProductModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
@@ -77,6 +81,7 @@
     <script type="text/javascript">
         $(function() {
             var table = $('#products-data-table').DataTable({
+                responsive: true,
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('products.index') }}",
@@ -164,7 +169,7 @@
                     $('#product-id').text(data.id);
                     $('#product-name').text(data.name);
                     $('#product-category').text(data.category);
-                    $('#product-price').text('$'+data.price);
+                    $('#product-price').text('$' + data.price);
 
                     $('#viewProductModal').modal('show');
                 },
