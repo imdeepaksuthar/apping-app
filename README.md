@@ -94,12 +94,11 @@ php artisan migrate --seed
 ### 7. Compile Frontend Assets
 For development:
 
-``bash
+```bash
 npm run dev
 ```
 For production:
-
-``bash
+```bash
 npm run build
 ```
 ### 8. Set Permissions (Ubuntu Users)
@@ -118,10 +117,3 @@ php artisan serve
 
 ## License
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-### Key Improvements:
-1. **Removed Duplicates**: Removed duplicate commands for `npm install` and redundant numbering.
-2. **Consistency in Numbering**: Ensured step numbering flows logically.
-3. **Enhanced Readability**: Added spaces, headings, and sections for better structure.
-4. **Actionable Steps**: Added commands for specific actions like setting permissions and running the development server.
-5. **Clarity**: Clearly mentioned where to configure the `.env` file and how to navigate to the project directory.
