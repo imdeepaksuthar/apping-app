@@ -9,8 +9,8 @@ use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    $products = Product::all();
-    return view('welcome',compact('products'));
+    $products = Product::paginate(9);
+    return view('welcome', compact('products'));
 });
 
 Auth::routes();
