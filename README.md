@@ -48,7 +48,9 @@ Run the following command to clone the project to your local machine:
 
 ```bash
 git clone https://github.com/imdeepaksuthar/apping-app.git
+```
 
+```bash
 cd apping-app
 ```
 
