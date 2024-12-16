@@ -29,36 +29,5 @@ Run the following command to clone the project to your local machine:
 ```bash
 git clone https://github.com/imdeepaksuthar/apping-app.git
 
-
-### 2. Configure set .env file
-Here is command do copy env file
-
-```bash
-cp .env.example .env
-
-### 3. composer install
-
-### 4. npm install
-
-### 4. npm install
-
-### 5. php artisan key:generate
-
-### 6. php artisan migrate --seed
-
-### 6. npm run dev
-
-### 6. npm run build
-
-### 7. If have ubuntu make permission this folder
-chmod -R 775 storage bootstrap/cache
-
 ## License
-
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-
-
-composer require laravel/ui
-php artisan ui bootstrap --auth
-npm install && npm run dev
